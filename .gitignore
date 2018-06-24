@@ -39,9 +39,7 @@ testem.log
 Thumbs.db
 
 # Angular/cli
-angular.json
 package-lock.json
-package.json
 test.ts
 .editorconfig
 tsconfig.json
