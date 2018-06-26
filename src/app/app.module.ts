@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { CarteComponent } from './carte/carte.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ContactComponent } from './contact/contact.component';
-<<<<<<< HEAD
 
 
 const ROUTES: Routes = [
@@ -20,8 +19,6 @@ const ROUTES: Routes = [
         {path: 'contact', component: ContactComponent},
         {path: '', redirectTo: '', pathMatch: 'full'}
 ];
-=======
->>>>>>> build: ajoute les composants dans app.module.ts
 
 @NgModule({
   declarations: [
