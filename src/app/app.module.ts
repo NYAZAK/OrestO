@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule,MatCardModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatCardModule, MatIconModule,
+  MatListModule, MatGridListModule, MatMenuModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { CarteComponent } from './carte/carte.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ContactComponent } from './contact/contact.component';
+import { MainDashComponent } from './main-dash/main-dash.component';
 
 
 const ROUTES: Routes = [
@@ -27,7 +29,8 @@ const ROUTES: Routes = [
     HomeComponent,
     CarteComponent,
     ReservationComponent,
-    ContactComponent
+    ContactComponent,
+    MainDashComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,8 @@ const ROUTES: Routes = [
     MatCardModule,
     MatListModule,
     RouterModule.forRoot(ROUTES),
+    MatGridListModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
