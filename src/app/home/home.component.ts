@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
 
-  table = '../assets/img-content/table.jpg';
+  table = '../assets/img-content/jay-wennington-table-unsplash.jpg';
 
   constructor() { }
 
