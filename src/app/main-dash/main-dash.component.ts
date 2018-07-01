@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-dash.component.css']
 })
 export class MainDashComponent {
+  titre = 'Les traditions marocaines';
   cards = [
-    { title: 'A la carte', cols: 2, rows: 1 },
-    { title: 'Galettes/crêpes', cols: 1, rows: 1 },
-    { title: 'Card 3', cols: 1, rows: 2 },
-    { title: 'Card 4', cols: 1, rows: 1 }
+    { title: 'a la carte', cols: 2, rows: 1 },
+    { title: 'couscous', cols: 1, rows: 1 },
+    { title: 'tajine', cols: 1, rows: 2 },
+    { title: 'pastilla', cols: 1, rows: 1 }
   ];
 }
