@@ -18,5 +18,5 @@ export class MainNavComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
 
-  title_app = 'A ma table';
+  title_app = 'Ma table Marocaine';
   }
