@@ -5,7 +5,7 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
+            {{card.title | uppercase}}
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -15,8 +15,29 @@
             </mat-menu>
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+        <mat-card-content class="dashboard-card-content" *ngIf="card.id === 'suc'" >
+            <p *ngFor='let sucree of sucree'>
+              <span>{{sucree.title}} : </span>
+              <span>{{sucree.description}}</span>
+              <span class="price">{{sucree.price | currency:'EUR':'symbol': '1.2-2'}}</span>
+              <mat-divider></mat-divider>
+            </p>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content" *ngIf="card.id === 'sal'">
+            <p *ngFor='let legume of legume'>
+              <span>{{legume.title}} : </span>
+              <span>{{legume.description}}</span>
+              <span class="price">{{legume.price | currency:'EUR'}}</span>
+              <mat-divider></mat-divider>
+            </p>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content" *ngIf="card.id === 'dess'">
+            <p *ngFor='let dessert of dessert'>
+              <span>{{dessert.title}} : </span>
+              <span>{{dessert.description}}</span>
+              <span class="price">{{dessert.price | currency:'EUR'}}</span>
+              <mat-divider></mat-divider>
+            </p>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
