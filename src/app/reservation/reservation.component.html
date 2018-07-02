@@ -1,9 +1,43 @@
-<form [formGroup]='reservationForm'>
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date" fromControlName='date'>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
-    </mat-form-field>
-
-
+<div *ngIf='!IsScheduleOk' >
+<form [formGroup]='reservationForm' (submit)='saveReservation()'>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" fromControlName='date'>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="heure" formControlName='time'>
+      <mat-option *ngFor="let time of timeOptions" [value]="time">
+        {{time}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Pour Combien de personne" formControlName='people'>
+      <mat-option *ngFor="let personne of peopleOptions" [value]="personne">
+        {{personne}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button  mat-raised-button color="primary" type='submit'>Confirmez votre reservation </button>
 </form>
+</div>
+
+
+<div  *ngIf='IsScheduleOk'>
+<form #f="ngForm" (submit)='finaliserReservation(f)'>
+  <mat-form-field>
+    <input type="text" matInput name="firstname" [(ngModel)]="client.firstname" placeholder="Prénom">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" matInput name="lastname" [(ngModel)]="client.lastname" placeholder="Nom">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="email" matInput name="email" [(ngModel)]="client.email" placeholder="Votre email">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="tel" matInput name="tel" [(ngModel)]="client.tel" placeholder="Numéro de téléphone">
+  </mat-form-field>
+  <button  mat-raised-button color="primary" type='submit'>Confirmez vos cordonnées</button>
+</form>
+</div>

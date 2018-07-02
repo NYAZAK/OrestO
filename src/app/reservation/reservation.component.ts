@@ -13,11 +13,15 @@ export class ReservationComponent implements OnInit {
   timeOptions = ['12:00', '12:30', '13:00', '13:30', '19:00', '19:30', '20:00', '20:30' ];
   peopleOptions = [1, 2, 3, 4, 5, 6, 7, 8];
 
+  client = {firstname: '', lastname: '', tel: '', email: '' };
   constructor(private fb: FormBuilder) { }
+
+  IsScheduleOk =  false;
 
   ngOnInit() {
     this.createForm();
   }
+
 
   createForm() {
     this.reservationForm = this.fb.group({
@@ -25,6 +29,22 @@ export class ReservationComponent implements OnInit {
         time: '',
         people: 1
     });
+  }
+
+  saveReservation(reservationForm) {
+    if (this.reservationForm.valid) {
+        this.IsScheduleOk = true;
+        console.log(this.reservationForm);
+    }
+  }
+
+
+
+  finaliserReservation(form) {
+    if (form.valid) {
+      console.log(form.value);
+      console.log('valid');
+    }
   }
 
 }
