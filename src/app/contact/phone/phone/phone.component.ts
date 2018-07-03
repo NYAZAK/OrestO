@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'zn-phone',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phone.component.css']
 })
 export class PhoneComponent implements OnInit {
+@Input()
+user: any;
+
 
   constructor() { }
 
