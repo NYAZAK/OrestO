@@ -1,3 +1,10 @@
-<p>
-  phone works!
-</p>
+<h3>{{user.role}}</h3>
+<div>
+  {{user.firstname }} {{user.lastName}}<br>
+</div>
+<div *ngIf='user.award !== "" '>
+  récompense : {{user.award}}
+</div>
+<div>
+  telephone : {{user.phoneNumer}} <button (click)="displayNumber()">zoom</button>
+</div>

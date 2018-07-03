@@ -1,5 +1,6 @@
-<p>
-  contact works!
-</p>
-
-<zn-phone></zn-phone>
+<zn-phone   [user]="standard" (zoom)="displayBig($event)"></zn-phone>
+<hr>
+<zn-phone   [user]="sommelier" (zoom)="displayBig($event)"></zn-phone>
+<hr>
+<zn-phone   [user]="boucher" (zoom)="displayBig($event)"></zn-phone>
+<div class="phone" *ngIf="numberToDisplay">{{numberToDisplay}} </div>
