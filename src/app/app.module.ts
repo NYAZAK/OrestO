@@ -12,18 +12,22 @@ import {
   MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule,
   MatDatepickerModule, MatInputModule, MatNativeDateModule, MAT_DATE_LOCALE, MatSelectModule
 } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CarteComponent } from './carte/carte.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainDashComponent } from './main-dash/main-dash.component';
 import { DishTableComponent } from './dish-table/dish-table.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { PhoneComponent } from './contact/phone/phone/phone.component';
 
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent },
   { path: 'carte', component: CarteComponent },
   { path: 'reservation', component: ReservationComponent },
+  { path: 'schedule', component: ScheduleComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '', pathMatch: 'full' }
 ];
@@ -37,7 +41,9 @@ const ROUTES: Routes = [
     ReservationComponent,
     ContactComponent,
     MainDashComponent,
-    DishTableComponent
+    DishTableComponent,
+    ScheduleComponent,
+    PhoneComponent
   ],
   imports: [
     MatSelectModule,
@@ -63,6 +69,7 @@ const ROUTES: Routes = [
     MatDividerModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'}],
