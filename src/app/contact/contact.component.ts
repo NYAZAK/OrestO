@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+
+
+
+  numberToDisplay = '';
+
+
   standard = {
     firstname: 'Benjamin',
     lastName: 'Glouton',
@@ -27,9 +33,16 @@ export class ContactComponent implements OnInit {
     award: 'Meilleur Ouvrier de France 2015',
     phoneNumer: '02-99-99-99-97',
   };
+
+
+  displayBig(event) {
+    this.numberToDisplay = event;
+  }
   constructor() { }
 
   ngOnInit() {
+
   }
+
 
 }
